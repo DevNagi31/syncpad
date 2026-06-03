@@ -2,6 +2,10 @@
 
 A real-time collaborative Markdown editor built on **Yjs CRDTs**. Eventually-consistent state convergence regardless of edit order, offline-first persistence in IndexedDB, and live sync over **Server-Sent Events + POST** — no WebSocket server required.
 
+**▶ Live demo: https://syncpad-delta.vercel.app**
+
+> **Hosting note:** the live demo is on Vercel, which is great for the UI, the editor, and offline/local editing. Real-time *multi-client* sync relies on a long-running server (in-memory `Y.Doc` + persistent SSE), which Vercel's serverless functions don't keep alive between invocations — so cross-tab live collaboration is best demonstrated locally or on a persistent host. A [`render.yaml`](./render.yaml) blueprint is included for one-click deploy to **Render**, where the SSE architecture runs as designed. On the free tier the server sleeps after ~15 min idle, so the first request may take ~30–50s to wake.
+
 ![Two-tab co-editing](docs/screenshots/03_two_tab_merge.png)
 
 > The screenshot above is the welcome doc after two browser tabs edited it concurrently. Both inserts are present, the document converged to identical bytes on both sides, and the live Markdown preview renders alongside.
