@@ -31,7 +31,7 @@ export default function DocPage({ params }: { params: Promise<{ id: string }> })
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: easing }}
-        className="mb-4 flex items-center justify-between"
+        className="mb-4 flex flex-wrap items-center justify-between gap-3"
       >
         <div>
           <div className="font-sketch text-[18px] text-ink-400">Document</div>
@@ -65,10 +65,10 @@ export default function DocPage({ params }: { params: Promise<{ id: string }> })
         transition={{ duration: 0.5, ease: easing, delay: 0.05 }}
         className="grid gap-4 lg:grid-cols-2"
       >
-        <div className="card overflow-hidden h-[calc(100vh-180px)]">
+        <div className="card overflow-hidden h-[60vh] lg:h-[calc(100vh-180px)]">
           <CollaborativeEditor docId={id} onContentChange={setContent} />
         </div>
-        <div className="card overflow-auto h-[calc(100vh-180px)]">
+        <div className="card overflow-auto h-[60vh] lg:h-[calc(100vh-180px)]">
           <div className="flex items-center justify-between border-b-2 border-dashed border-ink-200 px-4 py-2 text-ink-400">
             <span className="font-sketch text-[18px]">Live preview</span>
             <span className="font-mono text-[12px]">{content.length} chars</span>

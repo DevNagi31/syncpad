@@ -1,0 +1,17 @@
+# Render Blueprint — deploys SyncPad as a persistent Node web service so the
+# in-memory Y.Doc and long-lived SSE connections work as designed.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: syncpad
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"

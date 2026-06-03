@@ -59,13 +59,13 @@ export default function Home() {
           transition={{ duration: 0.7, ease: easing }}
           className="relative z-10 mx-auto max-w-3xl px-6 text-center"
         >
-          <div className="font-sketch text-[22px] text-ink-600">— sketched in real time —</div>
-          <h1 className="mt-2 font-sketch text-[64px] font-bold leading-[0.95] text-ink-900 md:text-[104px]">
+          <div className="font-sketch text-[18px] text-ink-600 sm:text-[22px]">— sketched in real time —</div>
+          <h1 className="mt-2 font-sketch text-[40px] font-bold leading-[0.95] text-ink-900 sm:text-[56px] md:text-[104px]">
             Write together,
             <br />
             <span className="ink-underline">on the same page.</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-[20px] leading-snug text-ink-600">
+          <p className="mx-auto mt-5 max-w-xl text-[17px] leading-snug text-ink-600 sm:mt-6 sm:text-[20px]">
             A collaborative Markdown editor drawn on Yjs CRDTs. Eventually-consistent state that
             converges no matter who types what, when — open two tabs and try to break it.
           </p>
