@@ -34,8 +34,8 @@ export default function DocPage({ params }: { params: Promise<{ id: string }> })
         className="mb-4 flex items-center justify-between"
       >
         <div>
-          <div className="text-[11px] uppercase tracking-[0.08em] text-ink-400">Document</div>
-          <h1 className="font-mono text-[18px] text-ink-800">{id}</h1>
+          <div className="font-sketch text-[18px] text-ink-400">Document</div>
+          <h1 className="font-sketch text-[32px] font-bold leading-none text-ink-900">{id}</h1>
         </div>
         <div className="flex items-center gap-2">
           <button
@@ -69,9 +69,9 @@ export default function DocPage({ params }: { params: Promise<{ id: string }> })
           <CollaborativeEditor docId={id} onContentChange={setContent} />
         </div>
         <div className="card overflow-auto h-[calc(100vh-180px)]">
-          <div className="flex items-center justify-between border-b border-ink-100 px-4 py-2 text-[12px] text-ink-400">
-            <span>Live preview</span>
-            <span className="font-mono">{content.length} chars</span>
+          <div className="flex items-center justify-between border-b-2 border-dashed border-ink-200 px-4 py-2 text-ink-400">
+            <span className="font-sketch text-[18px]">Live preview</span>
+            <span className="font-mono text-[12px]">{content.length} chars</span>
           </div>
           <MarkdownPreview source={content} />
         </div>

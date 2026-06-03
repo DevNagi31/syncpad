@@ -16,7 +16,8 @@ interface Props {
   onContentChange?: (text: string) => void;
 }
 
-const USER_COLORS = ['#0071e3', '#7e3bff', '#0a7c2f', '#b07b00', '#a8322a', '#0099a8'];
+// Graphite shades — keep remote cursors monochrome to match the pencil theme
+const USER_COLORS = ['#1c1a17', '#3f3c36', '#5c5850', '#8a8578', '#6e6a60', '#28251f'];
 
 function pickColor(): string {
   return USER_COLORS[Math.floor(Math.random() * USER_COLORS.length)]!;
